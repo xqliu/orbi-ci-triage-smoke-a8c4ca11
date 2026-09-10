@@ -24,3 +24,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 从零 reset D1 后出发，未做任何手工初始化。
 - 订阅与仓库绑定由流程自动完成，无需人工介入。
 - 沙箱由 provisioner 自动开出（provisioning `succeeded/attempts=1`）。
+
+## Perfect Run 2026-09-10
+
+- 全程零手工介入：从 D1 reset 后的零状态出发，注册、订阅、绑定、自动 provision 一气呵成，无任何 adhoc 修改。
+- tenant 由系统自动对账重建：登出走 `/api/logout`，tenant 由 OAuth 回调自动对账，provider 与模型从下拉选择。
+- 沙箱由 provisioner 自动开出：host-provisioner 由 sync timer 自动保持最新，沙箱 runner 独立完成一次真实交付。
