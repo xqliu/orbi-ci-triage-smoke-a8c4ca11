@@ -30,3 +30,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 全程零手工介入：从 D1 reset 后的零状态出发，注册、订阅、绑定、自动 provision 一气呵成，无任何 adhoc 修改。
 - tenant 由系统自动对账重建：登出走 `/api/logout`，tenant 由 OAuth 回调自动对账，provider 与模型从下拉选择。
 - 沙箱由 provisioner 自动开出：host-provisioner 由 sync timer 自动保持最新，沙箱 runner 独立完成一次真实交付。
+
+## Production Launch 2026-09-10
+
+- 生产控制面 `orbi.build/api*` 与营销站 `orbi.build/*` 共享同一主机名，通过同一域名提供服务。
+- 沙箱宿主机为独立云主机，而非个人开发机，由 orbi-cloud-provisioner 自动管理。
+- 本次交付由生产环境的 GitHub App `orbi-build` 驱动，通过官方生产控制面完成部署与验证。
