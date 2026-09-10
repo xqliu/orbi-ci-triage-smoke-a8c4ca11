@@ -18,3 +18,9 @@ Releases for this repository are executed by Orbi's release state machine, trigg
 ## Onboarding
 
 This repository is delivered through orbi-cloud's hosted sandbox delivery, where each sandbox is provisioned automatically by orbi-cloud-provisioner. A delivery is triggered by an Issue carrying the `ai-ready` label. The sandbox uses the model provider configured by the tenant on the Cloud side.
+
+## Clean Run 2026-09-10
+
+- 从零 reset D1 后出发，未做任何手工初始化。
+- 订阅与仓库绑定由流程自动完成，无需人工介入。
+- 沙箱由 provisioner 自动开出（provisioning `succeeded/attempts=1`）。
