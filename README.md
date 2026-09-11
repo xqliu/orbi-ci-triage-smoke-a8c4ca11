@@ -48,3 +48,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 免单码路径：生产 Checkout 页 `Total due today` 为 0，页面无卡号字段（服务端按 promotion_code id 施加，cloud#259 绕行）。
 - 模型配置三级联动：选 DeepSeek 后 baseUrl 自动填入、model_id 列表刷新为 `deepseek-v4-pro` / `deepseek-flash`。
 - provisioning：`attempts=1` 一次成功，`orbi.toml` 与 `.orbi/pi-providers.json` 两处配置一致。
+
+## prod perfect e2e 2026-09-11
+
+- 全链路 reset 后从零走通，tenant 由 OAuth 回调自动对账重建（系统 UUID，非手工插入）。
+- 免单码路径：生产 Checkout 页 `Total due today` 为 0、页面无卡号字段，订阅后 `plan` 由 `free` 变为 `founding_pilot`，零扣款。
+- provisioning 与模型配置保存同一秒自动入队，`attempts=1` 一次成功，`orbi.toml` 与 `.orbi/pi-providers.json` 两处配置一致。
