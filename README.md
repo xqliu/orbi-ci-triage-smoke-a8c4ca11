@@ -42,3 +42,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 免单码路径：应用 100% off 促销码后 Checkout 的 `Total due today` 为 0，且不再索要信用卡，全程无卡完成订阅。
 - 模型配置：provider 下拉选择后 baseUrl 自动填入，model_id 下拉随之联动，三级均在界面可见。
 - 沙箱 provisioning：一次成功（`attempts=1`），`orbi.toml` 与 `pi-providers.json` 中的 provider/model 一致。
+
+## prod e2e 2026-09-11
+
+- 免单码路径：生产 Checkout 页 `Total due today` 为 0，页面无卡号字段（服务端按 promotion_code id 施加，cloud#259 绕行）。
+- 模型配置三级联动：选 DeepSeek 后 baseUrl 自动填入、model_id 列表刷新为 `deepseek-v4-pro` / `deepseek-flash`。
+- provisioning：`attempts=1` 一次成功，`orbi.toml` 与 `.orbi/pi-providers.json` 两处配置一致。
