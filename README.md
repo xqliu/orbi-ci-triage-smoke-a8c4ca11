@@ -54,3 +54,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 全链路 reset 后从零走通，tenant 由 OAuth 回调自动对账重建（系统 UUID，非手工插入）。
 - 免单码路径：生产 Checkout 页 `Total due today` 为 0、页面无卡号字段，订阅后 `plan` 由 `free` 变为 `founding_pilot`，零扣款。
 - provisioning 与模型配置保存同一秒自动入队，`attempts=1` 一次成功，`orbi.toml` 与 `.orbi/pi-providers.json` 两处配置一致。
+
+## prod zero-touch e2e 2026-09-11
+
+- 全链路 reset 后从零走通，tenant 由 OAuth 回调自动对账重建（系统 UUID，非手工插入）。
+- 免单码路径：生产 Checkout 页无卡号字段、`Total due today` 为 0，订阅后 `plan` 由 `free` 变为 `founding_pilot`，零扣款。
+- provisioning 与模型配置保存同一秒自动入队，`attempts=1` 一次成功，37 秒完成。
