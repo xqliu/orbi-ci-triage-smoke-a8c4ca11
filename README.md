@@ -36,3 +36,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 生产控制面 `orbi.build/api*` 与营销站 `orbi.build/*` 共享同一主机名，通过同一域名提供服务。
 - 沙箱宿主机为独立云主机，而非个人开发机，由 orbi-cloud-provisioner 自动管理。
 - 本次交付由生产环境的 GitHub App `orbi-build` 驱动，通过官方生产控制面完成部署与验证。
+
+## beta e2e 2026-09-11
+
+- 免单码路径：应用 100% off 促销码后 Checkout 的 `Total due today` 为 0，且不再索要信用卡，全程无卡完成订阅。
+- 模型配置：provider 下拉选择后 baseUrl 自动填入，model_id 下拉随之联动，三级均在界面可见。
+- 沙箱 provisioning：一次成功（`attempts=1`），`orbi.toml` 与 `pi-providers.json` 中的 provider/model 一致。
