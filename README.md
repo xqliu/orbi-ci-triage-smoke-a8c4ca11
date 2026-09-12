@@ -72,3 +72,17 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 起点是生产库 10 张表全部清空后的零数据状态，没有任何预置记录；首次登录即由系统自动对账，tenant 被重新建出来，而非人工插入。
 - 整轮只使用同一份 DeepSeek provider 配置，中途没有人工调整过 provider、baseUrl 或 model，对账与后续流程都在这一份配置下完成。
 - 沙箱资源配额由 provisioning 自动应用，无需人工填写或调整。
+
+## 测试
+
+本项目是 Node.js ESM 工程：运行时依赖 [`nanoid`](https://www.npmjs.com/package/nanoid)，测试使用 [`vitest`](https://vitest.dev/)。
+
+```bash
+npm install   # 安装依赖，生成 package-lock.json 与 node_modules/
+npm test      # 运行 vitest 测试套件
+```
+
+真实执行结果（run 71d440ab）：
+
+- `npm install`：成功，输出 `added 38 packages, and audited 39 packages in 4s`、`found 0 vulnerabilities`，并生成提交到仓库的 `package-lock.json`。`node_modules/` 仅存在于本地，已被 `.gitignore` 忽略、不入库。
+- `npm test`：成功，输出 `Test Files 1 passed (1)`、`Tests 5 passed (5)`（见 `tests/nanoid.test.mjs`，覆盖 `nanoid()` 默认 21 位 URL-safe id、自定义长度、1000 次调用唯一性、自定义字母表，以及非法长度抛错）。
