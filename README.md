@@ -60,3 +60,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 全链路 reset 后从零走通，tenant 由 OAuth 回调自动对账重建（系统 UUID，非手工插入）。
 - 免单码路径：生产 Checkout 页无卡号字段、`Total due today` 为 0，订阅后 `plan` 由 `free` 变为 `founding_pilot`，零扣款。
 - provisioning 与模型配置保存同一秒自动入队，`attempts=1` 一次成功，37 秒完成。
+
+## prod zero-touch 2026-09-12
+
+- 从生产库全量清空（10 张表）的零状态出发。
+- 登录后 tenant 由系统自动对账重建，无手工插入。
+- 订阅、模型配置、绑定仓库、开沙箱全程无人介入。
