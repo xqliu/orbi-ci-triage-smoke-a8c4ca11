@@ -66,3 +66,9 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 - 从生产库全量清空（10 张表）的零状态出发。
 - 登录后 tenant 由系统自动对账重建，无手工插入。
 - 订阅、模型配置、绑定仓库、开沙箱全程无人介入。
+
+## prod zero-touch acceptance 2026-09-12 (DeepSeek)
+
+- 起点是生产库 10 张表全部清空后的零数据状态，没有任何预置记录；首次登录即由系统自动对账，tenant 被重新建出来，而非人工插入。
+- 整轮只使用同一份 DeepSeek provider 配置，中途没有人工调整过 provider、baseUrl 或 model，对账与后续流程都在这一份配置下完成。
+- 沙箱资源配额由 provisioning 自动应用，无需人工填写或调整。
