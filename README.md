@@ -75,14 +75,16 @@ This repository is delivered through orbi-cloud's hosted sandbox delivery, where
 
 ## 测试
 
-本项目是 Node.js ESM 工程：运行时依赖 [`nanoid`](https://www.npmjs.com/package/nanoid)，测试使用 [`vitest`](https://vitest.dev/)。
+本项目是 Node.js ESM 工程：运行时依赖 [`nanoid`](https://www.npmjs.com/package/nanoid) 与 [`zod`](https://zod.dev/)，测试使用 [`vitest`](https://vitest.dev/)。
 
 ```bash
 npm install   # 安装依赖，生成 package-lock.json 与 node_modules/
 npm test      # 运行 vitest 测试套件
 ```
 
-真实执行结果（run 71d440ab）：
+真实执行结果（run c8d6b1a6）：
 
-- `npm install`：成功，输出 `added 38 packages, and audited 39 packages in 4s`、`found 0 vulnerabilities`，并生成提交到仓库的 `package-lock.json`。`node_modules/` 仅存在于本地，已被 `.gitignore` 忽略、不入库。
-- `npm test`：成功，输出 `Test Files 1 passed (1)`、`Tests 5 passed (5)`（见 `tests/nanoid.test.mjs`，覆盖 `nanoid()` 默认 21 位 URL-safe id、自定义长度、1000 次调用唯一性、自定义字母表，以及非法长度抛错）。
+- `npm install zod`：成功，输出 `added 1 package, and audited 40 packages in 1s`、`found 0 vulnerabilities`，并把真实解析版本 `zod@4.6.2` 写入提交到仓库的 `package-lock.json`。`node_modules/` 仅存在于本地，已被 `.gitignore` 忽略、不入库。
+- `npm test`：成功（exit 0），输出 `Test Files 2 passed (2)`、`Tests 8 passed (8)`，包含：
+  - `tests/nanoid.test.mjs`（5 个既有用例）：`nanoid()` 默认 21 位 URL-safe id、自定义长度、1000 次调用唯一性、自定义字母表，以及非法长度抛错。
+  - `tests/zod.test.mjs`（3 个新增用例）：object schema 解析合法输入并丢弃未知键、`safeParse` 对非法输入返回失败并给出出错字段路径 `['age']`、`z.coerce.number()` 把字符串 `'42'` 转成数字 `42`。
