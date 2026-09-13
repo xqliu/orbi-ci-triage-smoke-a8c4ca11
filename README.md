@@ -88,3 +88,4 @@ npm test      # 运行 vitest 测试套件
 - `npm test`：成功（exit 0），输出 `Test Files 2 passed (2)`、`Tests 8 passed (8)`，包含：
   - `tests/nanoid.test.mjs`（5 个既有用例）：`nanoid()` 默认 21 位 URL-safe id、自定义长度、1000 次调用唯一性、自定义字母表，以及非法长度抛错。
   - `tests/zod.test.mjs`（3 个新增用例）：object schema 解析合法输入并丢弃未知键、`safeParse` 对非法输入返回失败并给出出错字段路径 `['age']`、`z.coerce.number()` 把字符串 `'42'` 转成数字 `42`。
+e2e n2n 104615
