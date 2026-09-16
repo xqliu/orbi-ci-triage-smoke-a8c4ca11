@@ -96,3 +96,4 @@ npm test      # 运行 vitest 测试套件
   - `tests/zod.test.mjs`（3 个新增用例）：object schema 解析合法输入并丢弃未知键、`safeParse` 对非法输入返回失败并给出出错字段路径 `['age']`、`z.coerce.number()` 把字符串 `'42'` 转成数字 `42`。
 e2e n2n 104615
 生产 e2e 193003 — v0.6.2 部署后验证
+生产 UAT 09160823：引擎 v0.5.8 全程零干预验收
