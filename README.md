@@ -98,3 +98,7 @@ e2e n2n 104615
 生产 e2e 193003 — v0.6.2 部署后验证
 生产 UAT 09160823：引擎 v0.5.8 全程零干预验收
 - 生产回测 09160631：orbi-cloud v0.6.10 晋级生产后交付链路验证通过
+
+## Regression 2026-09-18
+
+This repository was used for the Orbi Cloud v0.6.24 production regression on 2026-09-18.
