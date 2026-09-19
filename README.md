@@ -102,3 +102,4 @@ e2e n2n 104615
 ## Regression 2026-09-18
 
 This repository was used for the Orbi Cloud v0.6.24 production regression on 2026-09-18.
+Production e2e probe: v0.5.28 / v0.6.29 verified on 2026-09-19.
